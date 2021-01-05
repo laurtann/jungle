@@ -14,6 +14,6 @@
     <%= orderItem.quantity %>
   </td>
   <td>
-    <%= number_to_currency orderItem.total_price_cents %>
+    <%= number_to_currency orderItem.total_price_cents / 100.0 %>
   </td>
 </tr>
