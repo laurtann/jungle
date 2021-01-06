@@ -1,10 +1,12 @@
 class Admin::CategoriesController < ApplicationController
+  http_basic_authenticate_with name: ENV['ADMIN_USERNAME'], password: ENV['ADMIN_PW']
   def index
+
   end
 
-  def show
+  def new
   end
 
-  def show
+  def create
   end
 end
