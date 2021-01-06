@@ -1,16 +1,14 @@
 <h1>Admin Dashboard</h1>
 <p>Your store details: </p>
 <div class="panel panel-default items">
-  <table class="table table-bordered">
+  <table class="table table-striped">
     <tbody>
       <tr>
-        <th scope="row">Number of Products</th>
-        <td><%= @numOfProducts %></td>
+        <th scope="row">Number of Products: <%= @numOfProducts %></th>
         <td><a href="/admin/products">View your products</a></td>
       </tr>
       <tr>
-        <th scope="row">Number of Categories</th>
-        <td><%= @numOfCategories %></td>
+        <th scope="row">Number of Categories: <%= @numOfCategories %></th>
         <td> View Your Categories:
           <% Category.all.each do |category| %>
             <li><%= link_to category.name, category %></li>
