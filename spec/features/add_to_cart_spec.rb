@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "users can click the 'Add to Cart' button for a product on the home page and in doing so their cart increases by one", type: :feature do
+RSpec.feature "users can click the 'Add to Cart' button for a product on the home page and in doing so their cart increases by one", type: :feature, js: true do
   # SETUP
   before :each do
     @category = Category.create! name: 'Apparel'
@@ -18,7 +18,9 @@ RSpec.feature "users can click the 'Add to Cart' button for a product on the hom
 
   scenario "They click on add to cart for a product and cart increases by 1" do
     visit root_path
-    find(:link, "Add", match: :first).click
+    expect(page).to have_text('My Cart (0)')
+    find('.product', match: :first).hover.click_button('Add')
+    expect(page).to have_text('My Cart (1)')
   end
 
 end
