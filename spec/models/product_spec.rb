@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Product, type: :model do
   describe 'Validations' do
 
-    it 'it is valid when all fields are present' do
+    it 'is valid when all fields are present' do
       @category = Category.new(name: "Dinosaur")
       @category.save
       @category.products.create(name: "T-rex", price: 1000, quantity: 3)
