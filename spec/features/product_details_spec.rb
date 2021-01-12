@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "ProductDetails", type: :feature, js: true do
+RSpec.feature "Visitor navigates to product page after clicking on product card", type: :feature, js: true do
 
   # SETUP
   before :each do
@@ -16,4 +16,11 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
       )
     end
   end
+
+  # SELECT LINK TO CLICK - A CHILD OF CLASS PRODUCT-LINK
+  scenario 'Visitor sees show page after clicking on product card' do
+    find('.product-link', match: :first).click
+    expect(page).to have_css('.products-show')
+  end
+
 end
