@@ -17,9 +17,15 @@ RSpec.feature "Visitor navigates to product page after clicking on product card"
     end
   end
 
-  # SELECT LINK TO CLICK - A CHILD OF CLASS PRODUCT-LINK
-  scenario 'Visitor sees show page after clicking on product card' do
+  scenario "Visitor sees show page after clicking on product card's image or title" do
+    visit root_path
     find('.product-link', match: :first).click
+    expect(page).to have_css('.products-show')
+  end
+
+  scenario "Visitor sees show page after clicking 'details' button" do
+    visit root_path
+    find(:link, "Details", match: :first).click
     expect(page).to have_css('.products-show')
   end
 
