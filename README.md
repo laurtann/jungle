@@ -1,6 +1,18 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 built during week 9 of Lighthouse Labs Web Development Bootcamp.
+
+Users can
+- create aan account
+- log in
+- add items to their cart
+- delete items from their cart
+- checkout using stripe
+
+Admins can
+- create product categories
+- add products to their store
+- remove products from their store
 
 
 ## Setup
