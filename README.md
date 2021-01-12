@@ -37,3 +37,13 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+## Screenshots
+
+![Jungle Home View](https://github.com/laurtann/jungle/blob/master/docs/jungle-home-view.png?raw=true)
+
+![Jungle Checkout Stripe View](https://github.com/laurtann/jungle/blob/master/docs/jungle-checkout-view.png?raw=true)
+
+![Jungle Order Confirmation View](https://github.com/laurtann/jungle/blob/master/docs/jungle-order-confirm-view.png?raw=true)
+
+![Jungle Admin Products View](https://github.com/laurtann/jungle/blob/master/docs/jungle-admin-products-view.png?raw=true)
