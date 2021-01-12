@@ -73,7 +73,7 @@ RSpec.describe User, type: :model do
       @user.save
       email = "dino@dino.ca"
       password = "2234567"
-      @user2 = User.authenticate_with_credentials(:email, :password)
+      @user2 = User.authenticate_with_credentials(email, password)
       expect(@user2).to be_nil
     end
 
@@ -88,6 +88,15 @@ RSpec.describe User, type: :model do
 
     it 'is valid when the cases do not match' do
       @user = User.new(first_name: "Dinosaur", last_name: "Man", email: "dino@dino.ca", password: "1234567", password_confirmation: "1234567")
+      @user.save
+      email = "diNO@dino.ca"
+      password = "1234567"
+      @user2 = User.authenticate_with_credentials(email, password)
+      expect(@user2).not_to be_nil
+    end
+
+    it 'is valid when the cases do not match (OG in caps)' do
+      @user = User.new(first_name: "Dinosaur", last_name: "Man", email: "DIno@dino.ca", password: "1234567", password_confirmation: "1234567")
       @user.save
       email = "diNO@dino.ca"
       password = "1234567"

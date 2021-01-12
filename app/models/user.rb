@@ -5,7 +5,14 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :password, length: { in: 6..20 }
 
+  before_save :downcase_email
+
   def self.authenticate_with_credentials(email, password)
-    self.where("LOWER(email) = ?", email.downcase.delete(' ')).first.try(:authenticate, password)
+    @user = User.find_by_email(email.downcase.delete(' '))
+    @user && @user.authenticate(password) ? @user : nil
+  end
+
+  def downcase_email
+    self.email.downcase!
   end
 end
