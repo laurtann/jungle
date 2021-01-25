@@ -3,7 +3,7 @@
 A mini e-commerce application built with Rails 4.2 built during week 9 of Lighthouse Labs Web Development Bootcamp.
 
 Users can
-- create aan account
+- create an account
 - log in
 - add items to their cart
 - delete items from their cart
